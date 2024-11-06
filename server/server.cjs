@@ -1,14 +1,16 @@
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://master:db.t@v3rn@taverntalkdb.ziqhd.mongodb.net/?retryWrites=true&w=majority&appName=TavernTalkDB";
+// const url = "mongodb+srv://master:iiOAmvGpV179Ijsz@taverntalkdb.ziqhd.mongodb.net/?retryWrites=true&w=majority&appName=TavernTalkDB";
+const url = "mongodb+srv://master:iiOAmvGpV179Ijsz@taverntalkdb.ziqhd.mongodb.net/myDatabase?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
+const client = new MongoClient(url, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
     deprecationErrors: true,
-  }
+  },
+  connectTimeoutMS: 10000,  // Sets the timeout to 30 seconds
 });
 
 async function run() {
