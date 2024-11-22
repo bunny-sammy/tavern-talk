@@ -12,9 +12,9 @@
     "bcryptjs": "^2.4.3",
     "mongoose": "^8.8.2",
     "next": "15.0.3",
+    "next-auth": "^4.22.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "^19.0.0-rc-66855b96-20241106",
-    "sass": "^1.81.0",
     "tavern-talk": "file:"
   },
   "devDependencies": {

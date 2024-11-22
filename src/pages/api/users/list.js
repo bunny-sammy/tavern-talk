@@ -1,7 +1,5 @@
 const mongodb = require("@/lib/mongodb");
 import User from "@/models/user";
-import { NextResponse } from "next/server";
-import bcrypt from "bcryptjs";
 
 export default async function GET(req, res) {
   try {
