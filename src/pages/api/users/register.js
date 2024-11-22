@@ -1,20 +1,24 @@
 const mongodb = require("@/lib/mongodb");
 import User from "@/models/user";
-import { NextResponse } from "next/server";
+import { useRouter } from 'next/router';
 import bcrypt from "bcryptjs";
 
-export default async function POST(req) {
+export default async function POST(req, res) {
   try {
     const { name, email, password } = await req.json();
     const hashedPassword = await bcrypt.hash(password, 10);
     await mongodb.connect();
     await User.create({ name, email, password: hashedPassword });
 
-    return NextResponse.json({ message: "Usuário registrado com sucesso!" }, { status: 201 });
+    // res.status(200).json({ message: "Usuário registrado" });
+
+    const router = useRouter();
+
+    useEffect(() => {
+      // Redirect to another route
+      router.push('/');
+    }, [router]);
   } catch (error) {
-    return NextResponse.json(
-      { message: "Um erro ocorreu ao registrar o usuário." },
-      { status: 500 }
-    );
+    res.status(500).json({ error });
   }
 }
