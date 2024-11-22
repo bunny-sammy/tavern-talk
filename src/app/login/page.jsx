@@ -1,4 +1,7 @@
 import "./style.scss"
+import Link from "next/link";
+
+
 const Login = () => { 
     return(
         <div className="login_page">
@@ -10,11 +13,11 @@ const Login = () => {
                 <input type="senha" className="gradient-border"/>
 
             {/* <button>esqueci minha senha</button> */}
-            {/* <Link href="/page"> */}
+            <Link href="/char/index">
                 <button>
                     <img src="/assets/login-button.svg" alt="" />
                 </button>
-            {/* </Link> */}
+            </Link>
             </div>
         </div>
     );
