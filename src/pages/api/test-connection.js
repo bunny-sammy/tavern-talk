@@ -1,13 +1,17 @@
-import { connect, close } from "@/lib/mongodb"
+// pages/api/testConnection.js
+const mongodb = require("@/lib/mongodb");
 
 export default async function handler(req, res) {
-  const connection = await connect();
-  if (connection.success) {
-    const db = connection.db;
-    const collections = await db.listCollections().toArray();
-    res.status(200).json({ success: true, collections });
-  } else {
+  try {
+    await mongodb.connect();
+
+    const collections = await mongodb.sampleData.db.listCollections().toArray();
+
+    res.status(200).json({ success: true, collections: collections.map((col) => col.name) });
+  } catch (error) {
+    console.error("Connection failed:", error);
     res.status(500).json({ success: false, error: error.message });
+  } finally {
+
   }
-  await close();
 }

@@ -1,32 +1,20 @@
-const { MongoClient } = require("mongodb");
+import mongoose from "mongoose";
 
 if (!process.env.MONGODB_URI) {
   throw new Error('Invalid/Missing environment variable: "MONGODB_URI"');
 }
 
-const uri = process.env.MONGODB_URI;
-const options = { appName: "devrel.template.nextjs" };
-
-let client = new MongoClient(uri, options);
-
 const connect = async () => {
   try {
-    await client.connect();
-    console.log(" ✓ Connected to MongoDB");
-    const db = client.db("sample_mflix");
-    return {success: true, db};
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log("Connected to MongoDB");
   } catch (error) {
-    console.error("Connection failed:", error);
-    return {success: false, error: error};
+    console.log("Error connecting to MongoDB: ", error);
   }
-}
+};
 
-const close = async () => {
-  if (client) {
-    await client.close();
-  }
-}
+const sampleData = mongoose.connection.useDb("sample_mflix");
 
 module.exports = {
-  client, connect, close
+  connect, sampleData
 };
