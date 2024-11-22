@@ -1,0 +1,32 @@
+#root {
+  max-width: 1280px;
+  width: 100dvw;
+  height: 100dvh;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(180deg, rgba(23, 8, 8, 0.00) 0%, #4B1515 100%), #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button{
+  background: none;
+  background-color: none;
+  border-radius: 0;
+}
+
+.logo{
+  width: 100dvw;
+  height: auto;
+  position: absolute;
+  left: 45%;
+  top: 10%;
+  transform: translateX(-50%);
+}
+.dragon{
+  width: 100dvw;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
