@@ -1,6 +1,6 @@
 const mongodb = require("@/lib/mongodb");
-import User from "@/models/User";
-import Character from "@/models/Character";
+import User from "@/models/user";
+import Character from "@/models/character";
 
 export default async function POST(req, res) {
   try {

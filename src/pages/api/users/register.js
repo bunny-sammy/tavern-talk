@@ -1,5 +1,5 @@
 const mongodb = require("@/lib/mongodb");
-import User from "@/models/User";
+import User from "@/models/user";
 import bcrypt from "bcryptjs";
 
 export default async function POST(req, res) {

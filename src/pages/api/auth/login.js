@@ -1,5 +1,5 @@
 const mongodb = require("@/lib/mongodb");
-import User from "@/models/User";
+import User from "@/models/user";
 import { signIn } from "next-auth/react";
 import bcrypt from "bcryptjs";
 
