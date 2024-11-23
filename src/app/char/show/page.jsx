@@ -1,12 +1,13 @@
 import NavBar from "/src/components/NavBar"
 import "./style.scss"
 import Link from "next/link";
+import Header from "/src/components/Header"
 
 export default function Index(){
     return(
         <div className="char_show">
             <NavBar/>
-            <h1>TavernTalk</h1>
+            <Header/>
             <div className="nome gradient-box">
                 <span className="personagem">Eldrick Stormwind
                 <span>7</span>
