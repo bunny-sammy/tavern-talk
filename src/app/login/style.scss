@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 0;
 
     .logo_login{
         width: 57%;
@@ -17,28 +18,39 @@
         left: 45%;
         top: 5%;
         transform: translateX(-50%);
-        pointer-events: none;
+        //pointer-events: none;
     }
 .input_login{
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 30px;
+    background: transparent;
+    //z-index: 1;
+    overflow: visible;
+
     input{
         position: relative;
         width: 100%;
         height: 50px;
+        z-index: 1;
+        // background: transparent;
+        // border: none;
+        // box-sizing: border-box;
 
     }
-    .gradient-border {
-        position: relative;
-        padding: 10px; /* Adjust the padding as needed */
-        border: 5px solid transparent; /* Transparent border to maintain spacing */
-        border-radius: 10px; /* Optional: Makes the corners rounded */
-        background: radial-gradient(141.42% 141.42% at 0% 0%, #8B8B8B 0%, #E2E1E1 21.88%, #8B8B8B 42.19%, #E2E1E1 60.94%, #8B8B8B 79.17%, #E2E1E1 100%);
-        background-clip: border-box; /* Ensures the gradient is visible only on the border */
-        box-shadow: 0 0 0 5px transparent; /* Optional: To avoid content overlapping */
-    }
+
+
+    // .gradient-box {
+    //     position: relative;
+    //     padding: 10px; /* Adjust the padding as needed */
+    //     border: 5px solid transparent; /* Transparent border to maintain spacing */
+    //     border-radius: 10px; /* Optional: Makes the corners rounded */
+    //     background: radial-gradient(141.42% 141.42% at 0% 0%, #8B8B8B 0%, #E2E1E1 21.88%, #8B8B8B 42.19%, #E2E1E1 60.94%, #8B8B8B 79.17%, #E2E1E1 100%);
+    //     background-clip: border-box; /* Ensures the gradient is visible only on the border */
+    //     box-shadow: 0 0 0 5px transparent; /* Optional: To avoid content overlapping */
+    //     z-index: -1;
+    // }
 h1{
     position: relative;
     bottom: 0.2px;
@@ -61,5 +73,37 @@ img{
     bottom: 60px;
     gap: 50px;
 }
+}
+.teste{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+    background: transparent;
+    //z-index: 1;
+    overflow: visible;
+}
+}
+.gradient-box {
+    position: relative;
+    box-sizing: border-box;
+  
+    $border: 2px;
+    color: #ffffff;
+    background: #fffefe;
+    background-clip: padding-box;
+    border: $border solid transparent; 
+    border-radius: 5px;
+    cursor: pointer;
+  
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: -$border; 
+      border-radius: inherit; 
+      background: radial-gradient(141.42% 141.42% at 0% 0%, #8B8B8B 0%, #E2E1E1 21.88%, #8B8B8B 42.19%, #E2E1E1 60.94%, #8B8B8B 79.17%, #E2E1E1 100%);
+      pointer-events:none;
 }
 }
