@@ -58,13 +58,22 @@
     padding: 10px;
     border-radius: 10px;
     width: fit-content;
+
+    input {
+        display: inline;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        cursor: text;
+        pointer-events: none;
+    }
 }
 
 .message.user {
     background-color: #840000;
     align-self: flex-end;
     border-radius: 20px 20px 5px 20px;
-
 }
 
 .message.bot {
@@ -80,24 +89,24 @@
     width: 100%;
     background-color: #0D0202;
     padding: 10px 20px;
-}
 
-input {
-    display: flex;
-    height: 45px;
-    padding: 6px 14px 6px 16px;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1 0 0;
-    flex-grow: 1;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-    border-radius: 360px;
-    background: rgba(224, 184, 184, 0.12);
-    &:focus{
-        outline: 0 solid transparent;
+    input {
+        display: flex;
+        height: 45px;
+        padding: 6px 14px 6px 16px;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1 0 0;
+        flex-grow: 1;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        border-radius: 360px;
+        background: rgba(224, 184, 184, 0.12);
+        &:focus{
+            outline: 0 solid transparent;
+        }
     }
 }
 
