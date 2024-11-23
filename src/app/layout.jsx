@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "../layout.scss";
 import client from "/lib/mongodb";
+import { AuthProvider } from "./Providers";
 
 export const metadata = {
   title: "Tavern Talk",
@@ -17,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
       <body>
-        <div class="frame">
+        <div className="frame">
           {children}
         </div>
       </body>

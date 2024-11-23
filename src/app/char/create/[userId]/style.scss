@@ -1,0 +1,168 @@
+.gradient-box {
+    position: relative;
+    box-sizing: border-box;
+  
+    $border: 5px;
+    color: #FFF;
+    background: #210E0E;
+    background-clip: padding-box; /* !importanté */
+    border: solid $border transparent; /* !importanté */
+    border-radius: 30px;
+  
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: -$border; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      background: radial-gradient(141.42% 141.42% at 0% 0%, #8B8B8B 0%, #E2E1E1 21.88%, #8B8B8B 42.19%, #E2E1E1 60.94%, #8B8B8B 79.17%, #E2E1E1 100%);
+    }
+}
+.create-container{
+    display: flex;
+    justify-content: start;
+    padding: 40px 0 40px 0;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100% - 70px - 50px);
+    background: #0D0202;
+    z-index: 1;
+    font-family: Outfit;
+    margin-top: 50px;
+}
+#chat{
+    display: flex;
+    width: 90%;
+    height: 80%;
+}  
+
+
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+    width: 100%;
+    padding: 10px;
+}
+
+.messages {
+    flex-grow: 1;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+
+    input {
+        display: inline;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        cursor: text;
+        pointer-events: none;
+    }
+}
+
+.message.user {
+    background-color: #840000;
+    align-self: flex-end;
+    border-radius: 20px 20px 5px 20px;
+}
+
+.message.bot {
+    border-radius: 20px 20px 20px 5px;
+    background: rgba(224, 184, 184, 0.12);
+    align-self: flex-start;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+    background-color: #0D0202;
+    padding: 10px 20px;
+
+    input {
+        display: flex;
+        height: 45px;
+        padding: 6px 14px 6px 16px;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1 0 0;
+        flex-grow: 1;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        border-radius: 360px;
+        background: rgba(224, 184, 184, 0.12);
+        &:focus{
+            outline: 0 solid transparent;
+        }
+    }
+}
+
+button {
+    height: 45px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #310101;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #4d0303;
+}
+
+#suggestions {
+    display: flex; /* Garante que os filhos sejam exibidos lado a lado */
+    width: 100%; /* Ocupar toda a largura do pai */
+    overflow-x: auto; /* Permite scroll horizontal */
+    padding: 5px 12px; /* Adiciona espaçamento vertical */
+    gap: 12px; /* Espaço entre os botões */
+    align-items: center; /* Centraliza os botões verticalmente */
+    min-height: fit-content; /* Garante altura mínima */
+    visibility: visible; /* Força a visibilidade */
+    button{
+        display: flex;
+        width: fit-content;
+        height: 35px;
+        align-items: center;
+        padding:0 10px;
+        text-wrap: nowrap;
+    }
+    &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari e Edge */
+    }
+}
+
+// header{
+//     display: flex;
+//     height: 50px;
+//     width: 100%;
+//     justify-content: center;
+//     align-items: center;
+//     text-align: center;
+//     font-family: "Pirata One";
+//     font-size: 32px;
+//     position: absolute;
+//     top: 0;
+//     background: #0D0202;
+//     z-index: 10;
+// }

@@ -1,0 +1,31 @@
+.settings_page{
+    height: calc(100% - 70px);
+    background: #0D0202;
+
+}
+header{
+    display: flex;
+    background: #030000;
+    height: 60px;
+    align-items: center;
+    padding: 20px;
+    font-size: 24px;
+    font-family: Outfit;
+}
+.settings-content{
+    display: flex;
+    flex-direction: column;
+    h1{
+        padding: 12px;
+        font-size: 32px;
+        font-family: Pirata One;
+    }
+    .link{
+        display: flex;
+        height: 40px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+        border-bottom: 1px solid #250e0e;
+    }
+}
