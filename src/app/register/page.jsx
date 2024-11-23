@@ -1,4 +1,4 @@
-import RegisterForm from "@/components/RegisterForm"
+import RegisterForm from "/src/components/RegisterForm"
 import "./style.scss"
 
 export default function Register () {

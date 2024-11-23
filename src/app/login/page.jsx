@@ -1,5 +1,5 @@
 import "./style.scss"
-import LoginForm from "@/components/LoginForm"
+import LoginForm from "/src/components/LoginForm"
 import Link from "next/link";
 
 const Login = () => { 

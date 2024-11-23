@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-import NavBar from "@/components/NavBar";
+import NavBar from "/src/components/NavBar";
 import "./style.scss";
 
 export default function Create({params}) {

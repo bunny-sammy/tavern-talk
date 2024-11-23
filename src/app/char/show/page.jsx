@@ -1,4 +1,4 @@
-import NavBar from "@/components/NavBar"
+import NavBar from "/src/components/NavBar"
 import "./style.scss"
 import Link from "next/link";
 

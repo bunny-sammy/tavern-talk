@@ -1,4 +1,4 @@
-import NavBar from "@/components/NavBar"
+import NavBar from "/src/components/NavBar"
 import "./style.scss"
 import Link from "next/link";
 
@@ -21,7 +21,7 @@ export default async function Index({params}){
             
             <div className="button_char">
                 {characters.map((char,index)=>
-                    <Link href={"/chars/show/"+char._id} className="char_link gradient-box">
+                    <Link key={index} href={"/chars/show/"+char._id} className="char_link gradient-box">
                         <div className="texto_botao">
                         <span className="personagem">{char.name}</span>
                         <span className="estatisticas"> For: {char.str}, Des: {char.dex}, Con:  {char.con}, Int:  {char.int}, Sab:  {char.wis}, Car: {char.cha}</span>

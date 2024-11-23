@@ -1,4 +1,4 @@
-const mongodb = require("@/lib/mongodb");
+const mongodb = require("/lib/mongodb");
 
 export default async function handler(req, res) {
   try {
