@@ -7,7 +7,6 @@ export default async function POST(req, res) {
     const properties = req.body;
     properties.user = await User.findById(properties.user);
 
-    console.log(properties);
     await mongodb.connect();
     await Character.create(properties);
 
