@@ -1,11 +1,13 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import NavBar from "/src/components/NavBar";
 import "./style.scss";
 import Header from "/src/components/Header";
 export default function Create({params}) {
+    const router = useRouter();
     const [userId, setUserId] = useState(null);
 
     useEffect(() => {

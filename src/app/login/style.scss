@@ -29,17 +29,28 @@
     background: transparent;
     //z-index: 1;
     overflow: visible;
-
-    input{
-        position: relative;
-        width: 100%;
-        height: 50px;
-        z-index: 1;
-        padding-left: 1rem;
-        background-color: #170808;
-        // background: transparent;
-        // border: none;
-        // box-sizing: border-box;
+    .input-container-login{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+        input{
+            position: relative;
+            width: 100%;
+            height: 50px;
+            z-index: 1;
+            padding-left: 1rem;
+            background-color: #170808;
+            // background: transparent;
+            // border: none;
+            // box-sizing: border-box;
+    
+        }
+        label{
+            font-family: "Cinzel";
+            font-size: 12px;
+            padding: 0 12px;
+        }
 
     }
 
@@ -54,17 +65,8 @@
     //     box-shadow: 0 0 0 5px transparent; /* Optional: To avoid content overlapping */
     //     z-index: -1;
     // }
-h1{
-    position: relative;
-    bottom: 0.2px;
-    top: 30px;
-    width: 10%;
-    right: 0.1%;
-    font-family: "Cinzel";
-    font-size: 12px;
-    margin: 0;
-    
-}
+
+
 
 button{
     font-family: "Cinzel";
@@ -109,4 +111,16 @@ img{
       background: radial-gradient(141.42% 141.42% at 0% 0%, #8B8B8B 0%, #E2E1E1 21.88%, #8B8B8B 42.19%, #E2E1E1 60.94%, #8B8B8B 79.17%, #E2E1E1 100%);
       pointer-events:none;
 }
+}
+.error-message{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    font-size: 12px;
+    border: 1px solid #4B1515;
+    background-color: #170808;
+    margin: -5px 0;
+    border-radius: 5px;
 }
