@@ -1,0 +1,167 @@
+.char_show{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(180deg, rgba(23, 8, 8, 0.00) 0%, #4B1515 100%), #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    z-index: 1;
+    gap: 20px;
+    
+h1{
+    font-family: "pirata one";
+    font-size: 32px;
+    //position: relative;
+    bottom: 40%;
+}
+.nome{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 24px;
+    padding: 10px 15px;
+    justify-content: space-between;
+    height: fit-content;
+    align-items: left;
+    width: 100%;
+    gap: 5px;
+
+    .personagem{
+        font-family: pirata one;
+        text-align: left;
+        color: #D9D9D9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: fit-content;
+        font-size: 32px;
+        span{
+            font-size: 40px;
+            height: fit-content;
+        }
+    }
+    .resumo_personagem{
+        font-family: outfit;
+        font-size: 12px;
+        color: #D9D9D9;
+        // margin-right: 10px;
+        // margin-bottom: 50%;
+        padding: 0px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: fit-content;
+    }
+}
+// .atributos{
+//     font-family: pirata-one;
+//     font-size: 12;
+//     display: flex;
+//     flex-direction: column;
+//     text-align: left;
+//     font-size: 24px;
+//     padding: 5px 20px;
+//     justify-content: space-between;
+//     height: 70px;
+//     align-items: left;
+//     width: 110%;
+//     gap: 20px;
+
+
+// }
+
+}
+
+.gradient-box {
+    position: relative;
+    box-sizing: border-box;
+  
+    $border: 5px;
+    color: #FFF;
+    background: linear-gradient(92deg, #840000 0.35%, #600000 101.27%);
+    background-clip: padding-box;
+    border: $border solid transparent; 
+    border-radius: 5px;
+    //cursor: pointer;
+  
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: -$border; 
+      border-radius: inherit; 
+      background: radial-gradient(141.42% 141.42% at 0% 0%, #8B8B8B 0%, #E2E1E1 21.88%, #8B8B8B 42.19%, #E2E1E1 60.94%, #8B8B8B 79.17%, #E2E1E1 100%);
+      //pointer-events:none;
+}
+}
+
+.atributos{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 25px;
+    font-family: Pirata One;
+    .titulo_atributos{
+        display: flex;
+        padding: 0px 12px;
+        justify-content: start;
+        align-items: center;
+        color: #D9D9D9;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 135%; /* 32.4px */
+    }
+    .atributos_line{
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        .atributo_div{
+            display: flex;
+            padding: 5px 0 20px 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            height: fit-content;
+            width: 100%;
+            position: relative;
+            .atributo_title{
+                color: #D9D9D9;
+                font-size: 18px;
+                width: 100%;
+                font-family: pirata one;
+                height: fit-content;
+            }
+            .atributo_value{
+                color: #D9D9D9;
+                font-size: 40px;
+                line-height: 135%; /* 54px */
+                height: fit-content;
+            }
+            .modificador{
+                font-family: outfit;
+                color: #840000;
+                font-size: 18px;
+                display: flex;
+                padding: 4px 5px;
+                height: fit-content;
+                line-height: 18px; /* 24.3px */
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%) translateY(50%);
+                background: radial-gradient(141.42% 141.42% at 0% 0%, #8B8B8B 0%, #E2E1E1 21.88%, #8B8B8B 42.19%, #E2E1E1 60.94%, #8B8B8B 79.17%, #E2E1E1 100%);
+                border-radius: 100px;
+                box-shadow: 0px 14px 4px 0px rgba(0, 0, 0, 0.00), 0px 9px 4px 0px rgba(0, 0, 0, 0.04), 0px 5px 3px 0px rgba(0, 0, 0, 0.13), 0px 2px 2px 0px rgba(0, 0, 0, 0.23), 0px 1px 1px 0px rgba(0, 0, 0, 0.26);
+            }
+        }
+    }
+}
