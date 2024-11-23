@@ -1,7 +1,18 @@
+"use client";
+
 import "./nav-bar.scss"
 import React from "react"
+import { useEffect, useState } from "react";
+
 
 export default function NavBar (){
+    const [currentPath, setCurrentPath] = useState("");
+
+    useEffect(() => {
+        // Set the path once the component is mounted (client-side)
+        setCurrentPath(window.location.pathname);
+    }, []);
+
     const SettingsIcon = () => (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_289_601)">
@@ -41,18 +52,20 @@ export default function NavBar (){
         </svg>
     )
 
+
+
     return(
         <>
         <nav>
             <div className="content">
-                <a href="" className="nav-button-small">
+                <a href="/char/index" className={`nav-button-small ${currentPath === "/char/index" ? "active" : ""}`}>
                     <CharIcon/>
                     Personagens
                 </a>
                 <a href="/char/create" className="nav-button-add">
                     <AddButton/>
                 </a>
-                <a href="/settings" className="nav-button-small">
+                <a href="/settings" className={`nav-button-small ${currentPath === "/settings" ? "active" : ""}`}>
                     <SettingsIcon />
                     Configurações
                 </a>
