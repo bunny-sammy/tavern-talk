@@ -2,7 +2,6 @@
 
 import React from "react"
 import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
 
 export default function RegisterForm () {
     const router = useRouter();
@@ -14,10 +13,13 @@ export default function RegisterForm () {
         const data = Object.fromEntries(formData.entries());
 
         try {  
-          signIn("api/users/register", {
+          fetch("/api/auth/login", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
               email: data.email,
-              password: data.password,
-              redirect: false
+              password: data.password
+            })
           }).then(res => {
             if (res.ok) {
               router.push("/char/index");

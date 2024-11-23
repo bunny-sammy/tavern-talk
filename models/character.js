@@ -4,7 +4,7 @@ const charSchema = new Schema(
   {
     user: {
       type: Schema.Types.ObjectId,
-      ref: "user",
+      ref: "User",
       required: true,
     },
     name: {
@@ -47,5 +47,5 @@ const charSchema = new Schema(
   { timestamps: true }
 );
 
-const Character = models.Character || mongoose.model("character", charSchema);
+const Character = models.Character || mongoose.model("Character", charSchema);
 export default Character;
