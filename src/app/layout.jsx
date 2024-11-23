@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "../layout.scss";
 import client from "/lib/mongodb";
+import { AuthProvider } from "./Providers";
 
 export const metadata = {
   title: "Tavern Talk",
