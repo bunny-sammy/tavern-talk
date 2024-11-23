@@ -22,7 +22,7 @@
 .create-container{
     display: flex;
     justify-content: start;
-    padding: 10px 0 40px 0;
+    padding: 40px 0 40px 0;
     align-items: center;
     flex-direction: column;
     height: calc(100% - 70px - 50px);
@@ -152,17 +152,17 @@ button:hover {
     }
 }
 
-header{
-    display: flex;
-    height: 50px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-family: "Pirata One";
-    font-size: 32px;
-    position: absolute;
-    top: 0;
-    background: #0D0202;
-    z-index: 10;
-}
+// header{
+//     display: flex;
+//     height: 50px;
+//     width: 100%;
+//     justify-content: center;
+//     align-items: center;
+//     text-align: center;
+//     font-family: "Pirata One";
+//     font-size: 32px;
+//     position: absolute;
+//     top: 0;
+//     background: #0D0202;
+//     z-index: 10;
+// }

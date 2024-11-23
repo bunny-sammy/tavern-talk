@@ -1,6 +1,7 @@
 import NavBar from "/src/components/NavBar"
 import "./style.scss"
 import Link from "next/link";
+import Header from "/src/components/Header"
 
 export default async function Index({params}){
     const {userId, charId } = await params;
@@ -26,7 +27,7 @@ export default async function Index({params}){
     return(
         <div className="char_show">
             <NavBar userId={userId}/>
-            <h1>TavernTalk</h1>
+            <Header/>
             <div className="nome gradient-box">
                 <span className="personagem">{char.name}
                 <span>{char.level}</span>

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import NavBar from "/src/components/NavBar";
 import "./style.scss";
-
+import Header from "/src/components/Header";
 export default function Create({params}) {
     const router = useRouter();
     const [userId, setUserId] = useState(null);
@@ -188,9 +188,7 @@ export default function Create({params}) {
     return (
         <div className="create-container">
             <NavBar userId={userId} />
-            <header>
-                TavernTalk
-            </header>
+            <Header/>
             <form onSubmit={handleSubmit} id="chat" className="gradient-box">
                 <div ref={chatBoxRef} className="chat-box">
                     {/* Exibição das mensagens */}
