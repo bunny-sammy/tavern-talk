@@ -8,8 +8,9 @@
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(180deg, rgba(23, 8, 8, 0.00) 0%, #4B1515 100%), #000;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    z-index: 1;
 
 h1{
     font-family: "pirata one";
@@ -24,49 +25,68 @@ h1{
     flex-direction: column;
     width: 100%;
     gap: 20px;
-    height: 70px;
-    background: linear-gradient(92deg, #840000 0.35%, #600000 101.27%);
     border-radius: 5px;
     font-family: pirata one;
     left: 90%;
+    align-items: left;
+
     
     
-}
-button{
+.char_link{
+    display: flex;
+    flex-direction: row;
     text-align: left;
     font-size: 24px;
-    padding-left: 20px;
-    padding-top: 5px;
+    padding: 5px 20px;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+    
+        
+        
+    }
+} 
+
+.texto_botao{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+        
+    .estatisticas{
+        font-family: outfit;
+        font-size: 10px;
+        color: #FF9292;
+        margin-right: 10px;
+        margin-top: 0.2px;
+    }
+    .personagem{
+        font-family: pirata one;
+        
+    }
+
 }
-// .gradient-box {
+
+}
+.gradient-box {
+    position: relative;
+    box-sizing: border-box;
   
-//     display: flex;
-//     align-items: center;
-//     //width: 50vw;
-//     width: 90%;
-//     margin: auto;
-//     max-width: 22em;
+    $border: 5px;
+    color: #FFF;
+    background: linear-gradient(92deg, #840000 0.35%, #600000 101.27%);
+    background-clip: padding-box;
+    border: $border solid transparent; 
+    border-radius: 5px;
+    //cursor: pointer;
   
-//     position: relative;
-//     padding: 30% 2em;
-//     box-sizing: border-box;
-  
-//     $border: 5px;
-//     color: #FFF;
-//     background: #000;
-//     background-clip: padding-box; /* !importanté */
-//     border: solid $border transparent; /* !importanté */
-//     border-radius: 1em;
-  
-//     &:before {
-//       content: '';
-//       position: absolute;
-//       top: 0; right: 0; bottom: 0; left: 0;
-//       z-index: -1;
-//       margin: -$border; /* !importanté */
-//       border-radius: inherit; /* !importanté */
-//       background: linear-gradient(to right, red, orange);
-//     }
-//   }
-  
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: -$border; 
+      border-radius: inherit; 
+      background: radial-gradient(141.42% 141.42% at 0% 0%, #8B8B8B 0%, #E2E1E1 21.88%, #8B8B8B 42.19%, #E2E1E1 60.94%, #8B8B8B 79.17%, #E2E1E1 100%);
+      //pointer-events:none;
+}
 }
