@@ -14,6 +14,17 @@ export default async function Index({params}){
         return result.chars;
     })
 
+    const user = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/users/find/`+userId, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((res) => res.json())
+      .then((result) => {
+        return result.user;
+      })
+      console.log(user.name);
+
     return(
         <div className="char_index">
             <NavBar userId={userId} />
@@ -21,7 +32,7 @@ export default async function Index({params}){
             
             <div className="button_char">
                 {characters.map((char,index)=>
-                    <Link key={index} href={"/chars/show/"+char._id} className="char_link gradient-box">
+                    <Link key={index} href={`/char/index/${userId}/${char._id}`} className="char_link gradient-box">
                         <div className="texto_botao">
                         <span className="personagem">{char.name}</span>
                         <span className="estatisticas"> For: {char.str}, Des: {char.dex}, Con:  {char.con}, Int:  {char.int}, Sab:  {char.wis}, Car: {char.cha}</span>
