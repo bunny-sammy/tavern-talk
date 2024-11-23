@@ -2,27 +2,33 @@ import NavBar from "@/components/NavBar"
 import "../style.scss"
 import Link from "next/link";
 
+export default async function Index({params}){
+    const { userId } = await params;
+    const characters = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/chars/list/`+userId, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    }).then((res) => res.json())
+    .then((result) => {
+        return result.chars;
+    })
 
-export default function Index(){
     return(
         <div className="char_index">
             <NavBar/>
             <h1>TavernTalk</h1>
+            
             <div className="button_char">
-                <Link href="/char/show" className="char_link gradient-box">
-                    <div className="texto_botao">
-                    <span className="personagem">Eldrick Stormwind</span>
-                    <span className="estatisticas"> For: 10, Des: 14, Con: 12, Int: 18, Sab: 16, Car: 12 </span>
-                    </div>
-                    <img src="/assets/seta.svg" alt="seta" className='seta'/>
-                </Link>
-                <Link href="/char/show" className="char_link gradient-box">
-                    <div className="texto_botao">
-                    <span className="personagem">Kelthar Shadowbane</span>
-                    <span className="estatisticas"> For: 10, Des: 14, Con: 12, Int: 18, Sab: 16, Car: 12 </span>
-                    </div>
-                    <img src="/assets/seta.svg" alt="seta" className='seta'/>
-                </Link>
+                {characters.map((char,index)=>
+                    <Link href={"/chars/show/"+char._id} className="char_link gradient-box">
+                        <div className="texto_botao">
+                        <span className="personagem">{char.name}</span>
+                        <span className="estatisticas"> For: {char.str}, Des: {char.dex}, Con:  {char.con}, Int:  {char.int}, Sab:  {char.wis}, Car: {char.cha}</span>
+                        </div>
+                        <img src="/assets/seta.svg" alt="seta" className='seta'/>
+                    </Link>
+                )}
             </div>
         </div>
         

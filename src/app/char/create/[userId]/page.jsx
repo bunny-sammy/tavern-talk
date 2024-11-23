@@ -1,14 +1,20 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
-// import React from "react";
 
 import NavBar from "@/components/NavBar";
 import "./style.scss";
 
-export default function Create() {
-    const router = useRouter();
+export default function Create({params}) {
+    const [userId, setUserId] = useState(null);
+
+    useEffect(() => {
+        // Unwrap the params promise and extract userId
+        (async () => {
+            const resolvedParams = await params;
+            setUserId(resolvedParams.userId);
+        })();
+    }, [params]);
 
     const SendIcon = () => (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -149,7 +155,7 @@ export default function Create() {
 
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData.entries());
-        data.user = "67413862aeec85da7db7beae";
+        data.user = userId;
 
         try {
             fetch("/api/chars/create", {
