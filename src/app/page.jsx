@@ -13,6 +13,12 @@ export default function App() {
         <Link href="/login">
           <img src="/assets/login-page-button.svg" alt="" />
         </Link>
+        <div class="divisor">
+          <span>ou</span>
+        </div>
+        <Link href="/register">
+          <img src="/assets/register-page-button.svg" alt="" />
+        </Link>
       </div>
     </div>
   )
