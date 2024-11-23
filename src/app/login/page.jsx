@@ -7,8 +7,7 @@ const Login = () => {
         <div className="login_page">
             <img src="/assets/logo.png" alt="Logo Tavern Talk" className='logo_login' />
             <div className="input_login">
-                
-            <LoginForm/>
+                <LoginForm/>
             </div>
         </div>
     );

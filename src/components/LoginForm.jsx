@@ -48,14 +48,18 @@ export default function RegisterForm () {
 
     return(
       <form onSubmit={handleSubmit} className="input_login">
-          <h1>Email</h1>
+        <div className="input-container-login">
+          <label htmlFor="email">Email</label>
           <div className="teste gradient-box">
             <input name="email" type="email" className="gradient-border"/>
           </div>
-          <h1>Senha</h1>
+        </div>
+        <div className="input-container-login">
+          <label htmlFor="password">Senha</label>
           <div className="teste gradient-box">
             <input name="password" type="password" className="gradient-border"/>
           </div>
+        </div>
 
           <button>
               <img src="/assets/login-button.svg" alt="" />
