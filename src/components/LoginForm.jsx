@@ -12,22 +12,35 @@ export default function RegisterForm () {
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData.entries());
 
-        try {  
-          fetch("/api/auth/login", {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              email: data.email,
-              password: data.password
-            })
-          }).then(res => {
-            if (res.ok) {
-              router.push("/char/index");
-            } else {
-              console.log("User login failed.");
-            }
+        try {
+          const userExists = await fetch("api/users/exists", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email: data.email }),
+          }).then((res) => res.json())
+          .then((result) => {
+            return result.user;
           })
-          
+
+          if (userExists) {
+            fetch("/api/auth/login", {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                email: data.email,
+                password: data.password
+              })
+            })
+            .then(res => {
+              if (res.ok) {
+                router.push("/char/index/"+userExists._id);
+              } else {
+                console.log("User login failed.");
+              }
+            })
+          }
         } catch (error) {
           console.log("Error during login: ", error);
         }
@@ -36,9 +49,9 @@ export default function RegisterForm () {
     return(
       <form onSubmit={handleSubmit} className="input_login">
           <h1>Email</h1>
-          <input type="email" className="gradient-border"/>
+          <input name="email" type="email" className="gradient-border"/>
           <h1>Senha</h1>
-          <input type="password" className="gradient-border"/>
+          <input name="password" type="password" className="gradient-border"/>
 
           <button>
               <img src="/assets/login-button.svg" alt="" />
