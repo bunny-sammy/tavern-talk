@@ -112,3 +112,15 @@ img{
       pointer-events:none;
 }
 }
+.error-message{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    font-size: 12px;
+    border: 1px solid #4B1515;
+    background-color: #170808;
+    margin: -5px 0;
+    border-radius: 5px;
+}

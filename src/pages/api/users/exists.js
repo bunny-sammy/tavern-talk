@@ -5,7 +5,7 @@ export default async function POST(req, res) {
     try {
         const { email } = req.body;
         await mongodb.connect();
-        const user = await User.findOne({ email }).select("_id");
+        const user = await User.findOne({ email }).select("_id name");
         console.log("user: ", user);
         res.status(200).json({ user, message: "Usuário encontrado" });
     } catch (error) {

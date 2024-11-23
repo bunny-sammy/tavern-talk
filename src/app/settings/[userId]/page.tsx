@@ -4,6 +4,17 @@ import Link from "next/link";
 
 export default async function Settings({params}) {
     const { userId } = await params;
+  
+    const userExists = await fetch("api/users/exists", {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: data.email }),
+    }).then((res) => res.json())
+    .then((result) => {
+        return result.user;
+    })
 
     const Arrow = () => (
         <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,10 +40,11 @@ export default async function Settings({params}) {
                 Configurações
             </header>
             <div className="settings-content">
-                <h1>Olá, Usuário!</h1>
+                <h1>Olá, {userExists.name}!</h1>
                 <Link href="/settings/name" className="link">Editar nome <Arrow/></Link>
                 <Link href="/settings/email" className="link">Editar email <Arrow/></Link>
                 <Link href="/settings/password" className="link">Editar senha <Arrow/></Link>
+                <Link href="/login" className="link">Sair da conta<Arrow/></Link>
             </div>
         </div>
     )
