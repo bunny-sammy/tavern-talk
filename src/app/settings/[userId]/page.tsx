@@ -40,9 +40,9 @@ export default async function Settings({params}) {
             </header>
             <div className="settings-content">
                 <h1>Olá, {user.name}!</h1>
-                <Link href="/settings/name" className="link">Editar nome <Arrow/></Link>
+                {/* <Link href="/settings/name" className="link">Editar nome <Arrow/></Link>
                 <Link href="/settings/email" className="link">Editar email <Arrow/></Link>
-                <Link href="/settings/password" className="link">Editar senha <Arrow/></Link>
+                <Link href="/settings/password" className="link">Editar senha <Arrow/></Link> */}
                 <Link href="/login" className="link">Sair da conta<Arrow/></Link>
             </div>
         </div>
