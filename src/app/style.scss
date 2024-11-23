@@ -20,7 +20,7 @@
         height: auto;
         position: absolute;
         left: 45%;
-        top: 10%;
+        top: 8%;
         transform: translateX(-50%);
         pointer-events: none;
     }
@@ -29,6 +29,29 @@
         position: absolute;
         left: 0;
         bottom: 0;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        z-index: 10;
+    }
+    .divisor{
+        position: relative;
+        border-top: 2px #840000 solid;
+        margin: 0.4rem auto 0;
+        width: 80%;
+        height: 0.7rem;
+
+        span{
+            background-color: #1F0A0A;
+            color: #840000;
+            position: absolute;
+            padding: 0 0.6rem;
+            top: -13px;
+            left: center;
+            transform: translate(-50%, 0)
+        }
     }
 
 }
