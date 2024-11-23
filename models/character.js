@@ -11,6 +11,10 @@ const charSchema = new Schema(
       type: String,
       required: true,
     },
+    level: {
+      type: Number,
+      required: true,
+    },
     race: {
       type: String,
       required: true,

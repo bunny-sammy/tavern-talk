@@ -39,6 +39,13 @@ export default function Create({params}) {
             validate: (input) => input.trim().length > 0 || "O nome não pode ser vazio."
         },
         {
+            text: "Qual o nível do seu personagem?", name: "level",
+            validate: (input) =>
+                /^\d+$/.test(input) && Number(input) >= 1 && Number(input) <= 20
+                    ? true
+                    : "O valor deve ser um número entre 1 e 20."
+        },
+        {
             text: "Qual a raça do seu personagem?", name: "race",
             validate: (input) => ["Humano", "Elfo", "Anão", "Meio-Elfo", "Meio-Orc", "Halfling"].includes(input)
                 ? true
