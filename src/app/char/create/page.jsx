@@ -173,9 +173,9 @@ export default function Create() {
     return (
         <div className="create-container">
             <NavBar />
-            {/* <header>
+            <header>
                 TavernTalk
-            </header> */}
+            </header>
             <form onSubmit={handleSubmit} id="chat" className="gradient-box">
                 <div ref={chatBoxRef} className="chat-box">
                     {/* Exibição das mensagens */}
