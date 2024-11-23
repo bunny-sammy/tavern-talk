@@ -30,20 +30,18 @@ h1{
     left: 90%;
     align-items: left;
 
+    height: 80dvh;
+    overflow-y: auto;
     
-    
-.char_link{
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    font-size: 24px;
-    padding: 5px 20px;
-    justify-content: space-between;
-    height: 70px;
-    align-items: center;
-    
-        
-        
+    .char_link{
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        font-size: 24px;
+        padding: 5px 20px;
+        justify-content: space-between;
+        height: 70px;
+        align-items: center;
     }
 } 
 

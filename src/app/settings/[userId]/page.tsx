@@ -1,20 +1,19 @@
-import NavBar from "/src/components/NavBar";
+import NavBar from "../../../components/NavBar";
 import "./style.scss";
 import Link from "next/link";
 
 export default async function Settings({params}) {
     const { userId } = await params;
   
-    const userExists = await fetch("api/users/exists", {
-        method: "POST",
+    const user = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/users/find/`+userId, {
+        method: "GET",
         headers: {
-        "Content-Type": "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email: data.email }),
-    }).then((res) => res.json())
-    .then((result) => {
+      }).then((res) => res.json())
+      .then((result) => {
         return result.user;
-    })
+      })
 
     const Arrow = () => (
         <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +39,7 @@ export default async function Settings({params}) {
                 Configurações
             </header>
             <div className="settings-content">
-                <h1>Olá, {userExists.name}!</h1>
+                <h1>Olá, {user.name}!</h1>
                 <Link href="/settings/name" className="link">Editar nome <Arrow/></Link>
                 <Link href="/settings/email" className="link">Editar email <Arrow/></Link>
                 <Link href="/settings/password" className="link">Editar senha <Arrow/></Link>
