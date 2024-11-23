@@ -5,7 +5,7 @@ import React from "react"
 import { useEffect, useState } from "react";
 
 
-export default function NavBar (){
+export default function NavBar ({userId}){
     const [currentPath, setCurrentPath] = useState("");
 
     useEffect(() => {
@@ -58,14 +58,14 @@ export default function NavBar (){
         <>
         <nav>
             <div className="content">
-                <a href="/char/index" className={`nav-button-small ${currentPath === "/char/index" ? "active" : ""}`}>
+                <a href={"/char/index/"+userId} className={`nav-button-small ${currentPath === "/char/index" ? "active" : ""}`}>
                     <CharIcon/>
                     Personagens
                 </a>
-                <a href="/char/create" className="nav-button-add">
+                <a href={"/char/create/"+userId} className="nav-button-add">
                     <AddButton/>
                 </a>
-                <a href="/settings" className={`nav-button-small ${currentPath === "/settings" ? "active" : ""}`}>
+                <a href={"/settings/"+userId} className={`nav-button-small ${currentPath === "/settings" ? "active" : ""}`}>
                     <SettingsIcon />
                     Configurações
                 </a>

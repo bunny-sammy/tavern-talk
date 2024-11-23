@@ -178,7 +178,7 @@ export default function Create({params}) {
 
     return (
         <div className="create-container">
-            <NavBar />
+            <NavBar userId={userId} />
             <header>
                 TavernTalk
             </header>

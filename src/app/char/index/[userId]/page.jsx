@@ -1,5 +1,5 @@
 import NavBar from "@/components/NavBar"
-import "../style.scss"
+import "./style.scss"
 import Link from "next/link";
 
 export default async function Index({params}){
@@ -16,7 +16,7 @@ export default async function Index({params}){
 
     return(
         <div className="char_index">
-            <NavBar/>
+            <NavBar userId={userId} />
             <h1>TavernTalk</h1>
             
             <div className="button_char">
