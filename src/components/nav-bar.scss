@@ -10,6 +10,7 @@ nav{
     line-height: 135%; /* 13.5px */
     text-transform: uppercase;
     bottom: 0;
+    z-index: 5;
     .content{
         display: flex;
         justify-content: space-between;
