@@ -21,6 +21,7 @@ export default async function Index({params}){
         if (!Number.isInteger(modifier)) {
             modifier = modifier > 0 ? Math.floor(modifier) : Math.ceil(modifier);
         }
+        if (modifier > 0) modifier = '+'+modifier;
         return modifier;
     }
 
